@@ -1,0 +1,7 @@
+Poetry requirements file for vercel
+  poetry export -o requirements.txt
+
+
+nasa home api:
+  https://api.nasa.gov/ 
+
