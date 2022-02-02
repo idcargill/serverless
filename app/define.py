@@ -15,5 +15,6 @@ class handler(BaseHTTPRequestHandler):
     query_string = parse.parse_qsl(url_components)
     dic = (query_string)
 
-    return 'Hello'
+    self.wfile('Hello')
+    
     # Make API call with requests
