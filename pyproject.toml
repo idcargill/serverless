@@ -8,6 +8,7 @@ authors = ["Ian Cargill <idcargill@gmail.com>"]
 python = "^3.9"
 pytest = "^6.2.5"
 requests = "^2.27.1"
+vercel = "^0.2.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.0"

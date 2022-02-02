@@ -165,10 +165,21 @@ brotli = ["brotlipy (>=0.6.0)"]
 secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "ipaddress"]
 socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
+[[package]]
+name = "vercel"
+version = "0.2.1"
+description = "Vercel SDK"
+category = "main"
+optional = false
+python-versions = ">=3.7,<4.0"
+
+[package.dependencies]
+requests = ">=2.24.0,<3.0.0"
+
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "8e947f109d5be3d83ceece613257e0e5158f34c950619134df3f09a64bcd8314"
+content-hash = "546bec6d8062ca8e5e40505684d915ea0766bd39cbd899167b997dfae1ce02dc"
 
 [metadata.files]
 atomicwrites = [
@@ -230,4 +241,8 @@ toml = [
 urllib3 = [
     {file = "urllib3-1.26.8-py2.py3-none-any.whl", hash = "sha256:000ca7f471a233c2251c6c7023ee85305721bfdf18621ebff4fd17a8653427ed"},
     {file = "urllib3-1.26.8.tar.gz", hash = "sha256:0e7c33d9a63e7ddfcb86780aac87befc2fbddf46c58dbb487e0855f7ceec283c"},
+]
+vercel = [
+    {file = "vercel-0.2.1-py3-none-any.whl", hash = "sha256:dc7de7c73df76bbb8e7c30131125997a8aa74e126183d53e7dbd6e76931d42b6"},
+    {file = "vercel-0.2.1.tar.gz", hash = "sha256:053d634ac542b59af102251a5135a1654a74a8f5a37c6c97da61171202b60021"},
 ]
