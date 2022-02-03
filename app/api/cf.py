@@ -1,7 +1,6 @@
 from http.server import BaseHTTPRequestHandler
 from urllib import parse
 from data_sources.chuck_norris import cn
-import json
 
 class handler(BaseHTTPRequestHandler):
 
