@@ -1,26 +1,18 @@
-import os
 import requests
-from dotenv import load_dotenv
-from urllib import parse
 from datetime import datetime
-import json
-
-load_dotenv()
 
 message = {
   'No_Data': 'Something went wrong...it was probably your fault.'
 }
 
 class Chuck_Norris:
-    base_url = os.environ.get('CHUCK_NORIS_BASE_URL')
-    # chuck_joke_url = f'{base_url}?category={category}'
-    random_joke_url = os.environ.get('RANDOM_JOKE_URL') or 'https://api.chucknorris.io/jokes/random'
-    test_resp = 'Chuck will kill you hard'
 
     def __init__(self):
       self.last_request = None
       self.categories_cache = []
-      self.categories_url = os.environ.get('CHUCK_NORIS_CATEGORIES_URL') or 'https://api.chucknorris.io/jokes/categories'
+      self.base_url = 'https://api.chucknorris.io/jokes'
+      self.categories_url = 'https://api.chucknorris.io/jokes/categories'
+      self.random_joke_url = 'https://api.chucknorris.io/jokes/random'
 
     def update(self):
       res = requests.get(f'{self.categories_url}')

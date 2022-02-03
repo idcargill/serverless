@@ -1,12 +1,11 @@
 from http.server import BaseHTTPRequestHandler
-from urllib import parse
 from data_sources.chuck_norris import cn
 import json
 
 text = {
   "Title": 'Chuck Norris Facts',
   "Instructions": 'Go to api/ random or <category> to get random or categorical facts about Chuck Norris',
-  "Routes": ['/api/chuck', '/api/fact', '/api/date', '/api/cf?category=<category>' ],
+  "Routes": ['/api/', '/api/fact', '/api/date', '/api/cf?category=<category>' ],
   "Categories": cn.get_categories()
 }
 json_text = json.dumps(text, indent=4)
