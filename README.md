@@ -1,6 +1,6 @@
 # Chuck Norris Facts
 
-A serverless (not really) api endpoint for facts about Chuck Norris.\
+A serverless (not really) api endpoint for facts (not really) about Chuck Norris.\
 You can also get the date.
 
 Deployed [here](https://serverless-kappa-olive.vercel.app/api)
