@@ -3,7 +3,7 @@
 A serverless (not really) api endpoint for facts about Chuck Norris.\
 You can also get the date.
 
-Deployed [here] (https://serverless-kappa-olive.vercel.app/api)
+Deployed [here](https://serverless-kappa-olive.vercel.app/api)
 
 ## Endpoints
 
