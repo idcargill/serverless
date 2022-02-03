@@ -1,37 +1,20 @@
 import os
-from unicodedata import category
 import requests
 from dotenv import load_dotenv
-from http.server import BaseHTTPRequestHandler
 from urllib import parse
 from datetime import datetime
+import json
 
 load_dotenv()
 
-now = datetime.now()
+message = {
+  'No_Data': 'Something went wrong...it was probably your fault.'
+}
 
-
-# class Categories_Cache:
-#   def __init__(self):
-#     self.last_request = None
-#     self.categories_cache = []
-  
-#   def request_categories(self):
-#     res = requests.get(f'{Chuck.categories_url}')
-#     categories = res.json()
-#     self.categories_cache = categories
-
-#   def update(self):
-#     if self.last_request is None:
-#       self.last_request = datetime.now()
-#       self.request_categories()
-#       return self.categories_cache
-#     else:
-#       return self.categories_cache
-
-class Chuck:
+class Chuck_Norris:
     base_url = os.environ.get('CHUCK_NORIS_BASE_URL')
-    chuck_joke_url = f'{base_url}?category={category}'
+    # chuck_joke_url = f'{base_url}?category={category}'
+    random_joke_url = os.environ.get('RANDOM_JOKE_URL') or 'https://api.chucknorris.io/jokes/random'
     test_resp = 'Chuck will kill you hard'
 
     def __init__(self):
@@ -57,13 +40,22 @@ class Chuck:
       else:
         return self.categories_cache
 
-cn = Chuck()
+    def get_category_joke(self, category):
+      self.get_categories()
+      if category in self.categories_cache:
+        res = requests.get(f'{self.random_joke_url}?category={category}')
+        data = res.json()
+        return data['value']
+      else:
+        return message
 
-class handler(BaseHTTPRequestHandler):
-  
-  def do_GET(self):
-    self.send_response(200)
-    self.send_header('Content-type', 'text/plain')
-    self.end_headers()
-    self.wfile.write(f'{cn.get_categories()}'.encode())
-    return
+      
+    def get_random_joke(self):
+      res = requests.get(f'{self.random_joke_url}')
+      data = res.json()
+      if data:
+        return data
+      else:
+        return 'Nothing to report'
+
+cn = Chuck_Norris()
